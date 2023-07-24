@@ -1,0 +1,142 @@
+* {
+    font-family: verdanana;
+    margin: 0;
+}
+body {
+    background: #eee;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Menu base Styles */
+
+nav {
+    background: #333;
+}
+
+nav ul {
+    list-style-type: none; /* gets rid of dots */
+    padding: 0; /* brings text to the left edge */
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding: 10px;
+
+}
+
+nav a:hover {
+    background-color: #555; /* adding nav to the element makes where the hyperlink and its background change to said color */
+}
+
+
+/* Social menu base styles */
+
+a.tw{
+    background: url(img/tw.png) no-repeat center;
+    background-size: 80%;
+}
+
+a.fb{
+    background: url(img/fb.png) no-repeat center;
+    background-size: 80%;
+}
+
+.social a {
+    text-indent: -10000px; /* gets rid of text and shrinks space of image */
+}
+
+.social {
+    max-width: 80px; /* sets width of image look */
+    margin: 0 auto; /* centers */
+}
+
+
+/* grid vs flex base styles */
+
+#block {
+    margin: 20px;
+}
+
+article {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 10px; /* incorperates into over all width */
+    box-sizing: border-box;
+}
+
+article h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+
+/* flex styles */
+
+nav ul.social {
+    flex: 1 1 0; /* portians out space for smaller screens */
+    display: flex;
+}
+
+nav ul.social li {
+    flex: 1 1 0;
+}
+
+@media screen and (min-width: 768px) /* Only when browser is larger than 768px flex properties come into play */ {
+
+    nav ul { /* becomes a flex container and tags within the ul become flex items 
+        defualt behavior of flex items are stacked from left to right*/
+        display: flex;
+        justify-content: flex-start; /* flex-end -> moves to right side, doesn't change order
+        flex-start -> defualt all on left
+        space-around -> spaces out evenly, each side of the element 
+        space-between -> gets rid of extra space at ends. */
+
+    }
+
+    nav li {
+        flex: 1 1 0;
+    }
+
+
+    nav{
+        display: flex; /*displays second nav in line with first. On same line but second nav is last. */
+        justify-content: space-between; /* space between 1 nav and 2 */
+    }
+
+
+    ul.social {
+        margin: 0;
+    }
+
+    #blocks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    article {
+        flex: 0 1 32%;
+        transition: flex-basis 0.2s linear;
+    }
+
+    article.stack {
+        flex: 0 1 100%;
+    }
+
+
+} /* end media 768 */
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+* {
+    font-family: verdanana;
+    margin: 0;
+}
+body {
+    background: #eee;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 12000px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    background: #fff;
+    flex-wrap: wrap; /* When reached space limit takes up next avalible space below 
+            wrap = Element goes below
+            wrap-reverse = Element goes above
+            nowrap = Default beavhior - before flexwrap */
+    flex-flow: row; /* overrides defualt row and has them stacked. 100px in .box does not control elements anymore since not row, controls only hieght
+    Column changes main axis from across (row) to up and down 
+    reverse flips colors from different ends */
+    /* justify-content: flex-start; only applied to main axis 
+        column - up and down
+        row - left to right 
+    align-items goes applied to the cross axis
+        coulmn - left to right
+        row - up and down */
+    height: 600px;
+    align-items: center;
+}
+
+
+.box {
+    height: 100px;
+    flex: 0 0 100px; /* grow shrink basis 
+            flex: 1; = growth & Shrink 1 basis is 0 by defualt */
+    /* min-width: 500px; /* Wraps down as there is not enough room 
+            Shrinking screen bleow 500px applies a scroll bar as code will still show in full size */
+        /* flex-grow: 1; starts at diferent width - grows differently */
+    /* flex-basis: 200px; wraps when less than 200px in width, wraps to next line. does not take up full space as flex grow is not added at the time. */
+    /* flex-grow: 100px; /* Growth rate, same boxes grow to the same dimensions defining how many colums to take up
+    total columns = 12
+    relative to numbers next to it*/
+     /* all elements a growth of 1 
+    shrinks uneven as the min width is 200px
+    Solution: Flex wrap = when reach min width, wrap around next line*/
+}
+
+.one {
+    background: red;
+    /* flex-basis: 100px; */
+    /* flex-grow: 2; only one to grow and takes up all room */
+    /* Flex shrinks in priportion of size */
+    /* flex-shrink: 5; */
+}
+
+.two {
+    background: blue;
+    /* flex-basis: 200px; */
+    /* flex-grow: 3; twice as big */
+    /* flex-shrink: 5; */
+}
+
+.three {
+    background: green;
+    /* flex-basis: 300px; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 6; The bigger the number (shrink rate) The more it shrinks */
+}
